@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: rgb(91, 94, 233);
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p id="msg">Aprendendo  usar o <strong>DOM</strong> em JavaScript</p>
+    <div name="msg">Clique Aqui</div>
+
+    <script>
+        //Utilizando o getElementByTagName()
+        // Seleciona o primeiro paragrafo do site
+        // var p1 = window.document.getElementsByTagName('p')[0]
+        // window.document.write('Está escrito assim: ' + p1.innerText)
+
+        // // Mudando a cor da fonte do primeiro parágrafo
+        // p1.style.color = 'orange'
+        
+        // //Joga o corpo da página p/ uma variável ao qual podemos fazer alterações ao decorrer do código
+        // var corpo = window.document.body
+        
+        // //Mudando o background da página pela var corpo
+        // corpo.style.backgroundColor = 'black'
+
+        //Utilizando o getElementById()
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'Aguardando...'
+
+        //Utilizando o getElementByName()
+        var e = document.getElementsByName('msg')[0]
+        e.style.background = 'orange'
+
+        
+        //Utilizando o getElementByName()
+        var f = document.querySelector('p#msg')
+        f.style.color = 'red'
+        f.style.background = 'grass'
+        //----------------------------------------------------------------------------------------------------
+        
+
+    
+
+    </script>
+    
+</body>
+</html>
