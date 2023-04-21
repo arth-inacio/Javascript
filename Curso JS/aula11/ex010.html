@@ -8,13 +8,17 @@
 </head>
 <body>
     <h1>Sistema de Multas</h1>
+    <!-- Caixa de texto da velocidade -->
     Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+
+    <!--Botão "Verificar"-->
     <input type="button" value="Verificar" onclick="calcular()">
     <div id="res">
 
     </div>
 
     <script>
+        // Função para calcular a velocidade
         function calcular() {
             var txtv = document.querySelector('input#txtvel')
             var res = document.querySelector('div#res')
