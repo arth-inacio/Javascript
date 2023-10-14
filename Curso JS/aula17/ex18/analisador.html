@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!--Cabeçalho da página-->
+    <header>
+        <h1>Analisador de Números</h1>
+    </header>
+
+    <!--Section que contem o conteúdo-->
+    <section>
+        <!--1ª Div-->
+        <div>
+            <p> Número (entre 1 e 100): 
+                <input type="number" name="txtnum" id="txtnum"><input type="button" value="Adicionar" onclick="adicionar()">
+            </p>
+        </div>
+
+        <!--2ª Div-->
+        <div>
+            <select name="listagem" id="seltab" size="10">
+            </select>
+            <imput type="button" value="Finalizar" onclick="finalizar()">
+        </div>
+    </section>
+
+    <!--Rodapé-->
+    <footer>
+        <p> &copy; Arth </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
