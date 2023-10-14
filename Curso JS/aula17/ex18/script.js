@@ -1,16 +1,73 @@
-function adicionar() {
-    let txtnum = document.getElementById('txtnum')
-    let tab = document.getElementById('seltab')
-    let lista_num = []
+let num = document.querySelector('input#txtnum')
+let lista = document.querySelector('select#flista')
+let res = document.querySelector('div#res')
+let valores = []
 
-    if (txtnum.value.length <= 0) {
-        window.alert(`Por favor digite um número válido!`)
+function adicionar() {
+    
+    if (isNumero(num.value) && !inLista(num.value, valores)){
+        valores.push(Number(num.value))
+        let item = document.createElement('option')
+        item.text = `Valor ${num.value} adicionado.`
+        lista.appendChild(item)
+    } else {
+        verificador_erros()
+    }
+
+    num.value = ''
+    num.focus()
+    
+}
+function isNumero(n){
+    if (Number(n) >= 1 && Number(n) <= 100){
+        return true
     }else {
-        let n = Number(txtnum.value)
-        lista_num.push(n)
-        let item = document.createElement('option') 
-        item.text += `Valor ${n} adicionado.`
-        // item.value = `tab${cont}`
-        tab.appendChild(item)
+        return false
+    }
+}
+
+function inLista(n, l){
+    if (l.indexOf(Number(n)) != -1){
+        return true
+    }else {
+        return false
+    }
+    
+}
+
+function verificador_erros(){
+    if (isNumero(num.value) && !inLista(num.value, valores)){
+        window.alert("certo")
+    }else {
+        window.alert('Valor inválido ou já encontrado na lista!')
+    }
+}
+
+function finalizar(){
+    if (valores.length == 0) {
+        window.alert('Adicione valores antes de finalizar!')
+    }else {
+        let tot = valores.length
+        let maior = valores[0]
+        let menos = valores[0]
+        let soma = 0
+        let media = 0
+        for (let pos in valores){
+            soma += valores[pos]
+            
+            if (valores[pos] > maior){
+                maior = valores[pos]
+            }
+            if (valores[pos] < menos){
+                menos = valores[pos]
+            }
+        }
+        media = soma / tot
+        res.innerHTML = ''
+        res.innerHTML += `<p> Ao todo, temos ${tot} números cadastrados.</p>`
+        res.innerHTML += `<p>O maior valor informado foi ${maior}.</p>`
+        res.innerHTML += `<p>O menor valor informado foi ${menos}.</p>`
+        res.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p>`
+        res.innerHTML += `<p>A média dos valores digitados é ${media}.</p>`
     }
 }
