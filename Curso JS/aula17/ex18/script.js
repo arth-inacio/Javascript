@@ -54,7 +54,6 @@ function finalizar(){
         let media = 0
         for (let pos in valores){
             soma += valores[pos]
-            
             if (valores[pos] > maior){
                 maior = valores[pos]
             }
